@@ -1,0 +1,6 @@
+﻿step,variable,filled_n,valid_before,valid_after,valid_gain
+SHARE EURO-D,depression_score,327266,538746,866012,327266
+SHARE EURO-D,depressive_symptoms,327266,497815,825081,327266
+MHAS weekly social activity,social_participation,44053,545416,589469,44053
+KLoSA/LASI/MHAS frailty components,frailty_index,187760,572089,759849,187760
+Recompute derived healthy ageing,healthy_aging_binary,65640,828979,839340,10361

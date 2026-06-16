@@ -1,0 +1,24 @@
+# Raw or restricted person-level cohort data must not be committed.
+*.dta
+*.sav
+*.sas7bdat
+*.rds
+*.RData
+*.parquet
+*.feather
+*.xlsx
+*.xls
+*.zip
+*.7z
+*.rar
+
+# Local generated caches and logs.
+__pycache__/
+*.pyc
+*.log
+.ipynb_checkpoints/
+
+# Local environment files.
+.env
+.venv/
+venv/

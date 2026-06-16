@@ -1,0 +1,7 @@
+﻿cohort,lag_rows_with_next_healthy_aging,people,internet_valid_rows,social_valid_rows,both_exposures_valid_rows,median_years_to_next,max_years_to_next
+CHARLS,64874,22278,47874,62591,47392,2.0,9.0
+ELSA,42141,11557,20867,28017,20093,2.0,15.0
+HRS,160477,31537,142826,37120,37073,2.0,16.0
+KLoSA,34670,8517,0,33783,0,2.0,10.0
+MHAS,45547,19046,0,23106,0,3.0,17.0
+SHARE,189991,83186,96210,139250,94502,2.0,16.0

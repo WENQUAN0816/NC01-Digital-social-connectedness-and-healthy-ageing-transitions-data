@@ -1,0 +1,2 @@
+﻿analysis,outcome,term,k,coef,se,odds_ratio,ci_low,ci_high,q,tau2,i2_pct,status
+joint_interaction,next_healthy_aging_binary,internet_x_social_multiplicative,4,-0.001368178231575791,0.029570094779589298,0.9986327572975554,0.9423999077251385,1.0582210118791548,0.9689139419887436,0.0,0.0,ok

@@ -1,0 +1,3 @@
+﻿exposure,cohorts,attrition_model_n,observed_next_pct,status,mean_weight,p1_weight,p99_weight
+internet_use,"CHARLS,ELSA,HRS,SHARE",423599,73.41896463400528,ok,1.0,0.43768117686395913,8.315942360415224
+social_participation,"CHARLS,ELSA,HRS,KLoSA,MHAS,SHARE",449742,72.553819745543,ok,0.9999999999999998,0.4428840187137036,8.41479635556037

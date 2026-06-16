@@ -1,0 +1,390 @@
+\documentclass[pdflatex,sn-nature]{sn-jnl}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{placeins}
+
+\raggedbottom
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\title[Digital-social connectedness and healthy ageing]{Digital-social connectedness and healthy ageing transitions in a multiple cohort study}
+
+\author*[1,2]{\fnm{Quan} \sur{Wen}}\email{wenquan@student.usm.my}
+
+\author*[1]{\fnm{Mazran} \sur{Ismail}}\email{mazran@usm.my}
+
+\author[1]{\fnm{Muhammad Hafeez Abdul} \sur{Nasir}}\email{hafeez.abdnasir@usm.my}
+
+\author[3]{\fnm{Yanting} \sur{Wu}}\email{wuyanting@kfzxyy.com}
+
+\affil*[1]{\orgdiv{School of Housing, Building and Planning}, \orgname{Universiti Sains Malaysia}, \orgaddress{\city{Gelugor}, \postcode{11800}, \country{Malaysia}}}
+
+\affil[2]{\orgdiv{School of Art and Design}, \orgname{Henan Industry and Trade Vocational College}, \orgaddress{\city{Zhengzhou}, \postcode{451191}, \country{China}}}
+
+\affil[3]{\orgdiv{Kaifeng Key Laboratory of Clinical Medicine}, \orgname{Kaifeng Central Hospital}, \orgaddress{\city{Kaifeng}, \postcode{475000}, \country{China}}}
+
+\abstract{Digitalisation and population ageing are reshaping the resources through which older adults remain connected to information, services, and social relationships. Here we harmonised longitudinal ageing-cohort data from CHARLS, ELSA, HRS, KLoSA, MHAS, and SHARE to examine whether digital connectedness, social connectedness, and their dynamic profiles were associated with multidimensional healthy ageing at the next wave. In lagged cohort-specific models adjusted for baseline healthy ageing and sociodemographic covariates, internet use was associated with higher odds of subsequent healthy ageing (random-effects odds ratio 1.51, 95\% confidence interval 1.43--1.60), as was social participation (1.21, 1.05--1.40). Older adults with both digital and social connectedness showed the most favourable profile compared with those with neither form of connectedness (1.65, 1.36--2.00), although formal interaction tests did not indicate clear statistical synergy. Persistent internet use was more strongly associated with healthy ageing than newly adopted or discontinued use. Joint connectedness was associated with both gaining healthy ageing (1.68, 1.37--2.06) and maintaining healthy ageing (1.65, 1.30--2.10). These findings extend prior work from isolated behaviours and single health domains to dynamic connectedness patterns and healthy-ageing transitions across harmonised international cohorts.}
+
+\keywords{healthy ageing, internet use, social participation, longitudinal cohorts, digital inclusion, older adults}
+
+\maketitle
+
+\section{Introduction}
+
+Population ageing is changing the distribution of health needs, care demand, and functional ability across societies. At the same time, digital systems increasingly mediate access to information, social interaction, financial services, health care, and community resources. These two transformations are often studied separately, yet they intersect directly in later life: older adults who remain socially and digitally connected may have different opportunities to sustain autonomy, cognition, psychological wellbeing, and functional capacity than those who are disconnected. The healthy-ageing framework emphasises the maintenance of functional ability rather than the absence of a single disease, making it well suited to examine connectedness as a multidimensional later-life resource \cite{beard2015world,teramoto2024global,collaborators2022global}.
+
+Previous research provides strong reasons to consider both digital and social connections, but the evidence is still fragmented. Digital inclusion has been associated with healthy ageing, mental-health, and cognitive outcomes among older adults, including cross-national evidence on internet use and mental health, joint internet-use and social-participation evidence on cognition, bidirectional CHARLS evidence on digital inclusion and healthy ageing, and recent work on digital divides in China \cite{li2025tenyear,luo2024positive,yuan2025associations,yang2026bidirectional,chen2023digital}. Social connection and activity engagement have also been linked to mental wellbeing, depression, frailty, cognition, mortality, and end-of-life outcomes, with longitudinal studies suggesting that social isolation and loneliness are not merely subjective states but markers of broader vulnerability \cite{mak2023hobby,santini2020social,davies2021longitudinal,samtani2022associations,pivodic2024social}. However, digital use and social participation are frequently modelled as separate exposures, even though they may represent complementary routes through which older adults remain embedded in information and relationship networks.
+
+Another limitation is that many studies focus on one health domain at a time. Cognitive decline, depression, frailty, disability, and multimorbidity are all relevant, but healthy ageing is broader than any single component. Recent ageing-cohort studies have increasingly used multidimensional constructs, including intrinsic capacity, healthy ageing, and biological ageing measures, to capture the integrated nature of later-life health \cite{li2026intrinsic,beard2024cohort,mikkola2023healthy,sayed2021inflammatory}. Extending this logic to connectedness requires asking whether digital and social resources are associated with transitions in overall healthy ageing, not only with isolated cognitive or mental-health endpoints.
+
+A dynamic perspective is also needed. Whether an older adult used the internet or participated socially at one wave may be less informative than whether connectedness was newly adopted, discontinued, or sustained. Persistent engagement may reflect accumulated skills, confidence, access, and routines, whereas stopping connectedness may mark emerging barriers or declining health. Similar reasoning applies to healthy-ageing outcomes: maintaining healthy ageing among those already healthy and gaining healthy ageing among those initially unhealthy are different transitions with different public-health meanings. These transition-based questions cannot be addressed by cross-sectional prevalence analyses.
+
+Harmonised ageing cohorts offer a structured way to examine these issues across countries while respecting measurement differences. In this study, we used harmonised longitudinal data from HRS-family ageing cohorts to investigate digital and social connectedness as joint and dynamic resources for healthy ageing. We first estimated the associations of internet use and social participation with next-wave multidimensional healthy ageing. We then examined joint connectedness profiles, exposure histories, gaining and maintaining healthy ageing, subgroup heterogeneity, domain-specific patterns, inverse-probability weighting for attrition, and alternative outcome definitions. Throughout, we interpret estimates as associations rather than causal effects.
+
+\section{Results}
+
+\subsection{Cohort coverage and connectedness measurement}
+
+The harmonised source files contained 916,824 person-waves from seven ageing studies. Longitudinal lagged observations were available in CHARLS, ELSA, HRS, KLoSA, MHAS, and SHARE; LASI contributed one wave in the available harmonised file and was therefore not included in the longitudinal main models. Across the six longitudinal cohorts, 588,055 lagged person-waves were available before exposure-specific restrictions. Internet-use measures were available in CHARLS, ELSA, HRS, and SHARE, while social-participation measures were available in CHARLS, ELSA, HRS, KLoSA, MHAS, and SHARE. The median interval to the next wave was two years in most cohorts and three years in MHAS.
+
+The participant and observation flow is shown in Fig.~\ref{fig:design}. The source files contained 328,532 participants. After excluding participants without an eligible next-wave observation, including the single-wave LASI file in the prepared data, 183,537 participants contributed 588,055 lagged person-wave observations to longitudinal analyses. Exposure-specific analytic samples then depended on variable availability: internet-use analyses were restricted to CHARLS, ELSA, HRS, and SHARE, whereas social-participation analyses additionally included KLoSA and MHAS.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{fig1_cohort_data_profile.pdf}
+\caption[\textbf{Cohort data profile and exposure availability.}]{\textbf{Cohort data profile and exposure availability.} The parallel cohort profile summarises source participants, person-waves, number of waves, lagged person-waves, and exposure-specific analytic rows across the harmonised ageing cohorts. Lines represent cohorts and the colour scale denotes the number of available survey waves. Reporting follows observational cohort guidance and recent ageing-cohort practice \cite{elm2007strengthenin,li2026intrinsic,beard2024cohort}.}
+\label{fig:design}
+\end{figure}
+\FloatBarrier
+
+Table~\ref{tab:coverage} summarises the cohort coverage and exposure-specific analytic rows from the longitudinal analysis outputs. This measurement pattern shaped the modelling strategy. Rather than forcing unavailable internet measures in KLoSA and MHAS into a pooled exposure definition, we estimated exposure-specific cohort models and then combined comparable estimates. This approach preserves the cross-national design while avoiding artificial comparability.
+
+\begin{table}[!htbp]
+\caption{\textbf{Cohort coverage in the harmonised longitudinal dataset.}}
+\label{tab:coverage}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+\toprule
+Cohort & PW & People & Waves & Lagged PW & Lagged people & Internet rows & Social rows \\
+\midrule
+CHARLS & 96,628 & 25,873 & 5 & 70,755 & 23,474 & 47,874 & 62,591 \\
+ELSA & 90,069 & 19,802 & 9 & 70,267 & 15,388 & 20,867 & 28,017 \\
+HRS & 208,674 & 36,529 & 11 & 171,918 & 32,960 & 142,826 & 37,120 \\
+KLoSA & 44,273 & 9,238 & 6 & 35,035 & 8,566 & 0 & 33,783 \\
+MHAS & 76,506 & 26,839 & 5 & 49,657 & 19,797 & 0 & 23,106 \\
+SHARE & 327,266 & 136,843 & 7 & 190,423 & 83,352 & 96,210 & 139,250 \\
+LASI & 73,408 & 73,408 & 1 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular*}
+\renewcommand{\arraystretch}{1.0}
+\par\raggedright\scriptsize PW denotes person-waves. Lagged rows and exposure-specific rows are copied from the longitudinal analysis outputs used for the manuscript.
+\setlength{\tabcolsep}{6pt}
+\end{table}
+\FloatBarrier
+
+\subsection{Internet use, social participation, and subsequent healthy ageing}
+
+In lagged models adjusted for baseline healthy ageing and sociodemographic covariates, internet use was associated with higher odds of healthy ageing at the following wave in the four cohorts with comparable measurement. The random-effects pooled odds ratio (OR) was 1.51 (95\% confidence interval [CI] 1.43--1.60), with moderate-to-substantial between-cohort heterogeneity (I$^2$ = 77.90\%). Social participation was also associated with subsequent healthy ageing across the six eligible cohorts, although the pooled association was smaller and more heterogeneous (OR 1.21, 95\% CI 1.05--1.40; I$^2$ = 98.03\%; Table~\ref{tab:main}).
+
+These two estimates should not be read as competing effect sizes. Internet use and social participation capture different forms of connectedness, were available in different sets of cohorts, and may reflect different country-specific infrastructures and norms. Their parallel positive direction, however, motivated the joint and dynamic analyses below.
+
+\begin{table}[!htbp]
+\caption{\textbf{Odds ratios for next-wave healthy ageing in relation to internet use and social participation.}}
+\label{tab:main}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrr@{}}
+\toprule
+Exposure & Study & Obs. & N & Events & OR (95\% CI) & P \\
+\midrule
+\multirow{5}{*}{Internet use}
+& CHARLS & 45,545 & 20,646 & 18,910 & 1.37 (1.25--1.49) & <0.001 \\
+& ELSA & 20,852 & 8,778 & 14,329 & 1.49 (1.37--1.63) & <0.001 \\
+& HRS & 141,513 & 29,637 & 74,343 & 1.53 (1.48--1.58) & <0.001 \\
+& SHARE & 93,582 & 58,425 & 52,117 & 1.61 (1.55--1.67) & <0.001 \\
+& Random effects & -- & -- & -- & 1.51 (1.43--1.60) & -- \\
+\addlinespace
+\multirow{7}{*}{Social participation}
+& CHARLS & 60,334 & 21,038 & 24,997 & 1.10 (1.06--1.14) & <0.001 \\
+& ELSA & 27,996 & 9,840 & 19,327 & 1.02 (0.93--1.11) & 0.677 \\
+& HRS & 36,950 & 19,136 & 18,634 & 1.09 (1.03--1.16) & 0.003 \\
+& KLoSA & 33,197 & 8,374 & 13,599 & 1.49 (1.41--1.59) & <0.001 \\
+& MHAS & 23,097 & 13,499 & 15,027 & 1.14 (1.07--1.22) & <0.001 \\
+& SHARE & 135,003 & 69,054 & 75,652 & 1.50 (1.46--1.55) & <0.001 \\
+& Random effects & -- & -- & -- & 1.21 (1.05--1.40) & -- \\
+\bottomrule
+\end{tabular*}
+\renewcommand{\arraystretch}{1.0}
+\setlength{\tabcolsep}{6pt}
+\end{table}
+\FloatBarrier
+
+\subsection{Joint digital-social connectedness profiles}
+
+Among cohorts with both exposure measures, older adults were classified into four profiles: neither form of connectedness, internet use only, social participation only, and both. Compared with the neither-connectedness group, the internet-only group had higher odds of subsequent healthy ageing (OR 1.49, 95\% CI 1.44--1.55). The social-only group had a weaker positive association (OR 1.15, 95\% CI 1.01--1.31). The group with both digital and social connectedness had the most favourable profile (OR 1.65, 95\% CI 1.36--2.00; Fig.~\ref{fig:joint}).
+
+Formal interaction tests did not support a synergy interpretation. The pooled multiplicative interaction estimate was close to null (OR 1.00, 95\% CI 0.94--1.06), and the relative excess risk due to interaction was small with a confidence interval crossing zero (RERI 0.07, 95\% CI -0.07 to 0.20). The joint profile is therefore best interpreted as an empirically favourable connectedness pattern rather than proof that the two exposures amplify one another beyond their separate associations.
+
+\begin{table}[!htbp]
+\caption{\textbf{Odds ratios for next-wave healthy ageing by joint connectedness profile from four cohorts.}}
+\label{tab:joint}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrr@{}}
+\toprule
+Study & Profile & Obs. & Events & OR (95\% CI) & P \\
+\midrule
+\multirow{3}{*}{CHARLS}
+& Internet only & 45,545 & 18,910 & 1.35 (1.16--1.57) & <0.001 \\
+& Social only & 45,545 & 18,910 & 1.07 (1.02--1.12) & 0.003 \\
+& Both & 45,545 & 18,910 & 1.44 (1.31--1.60) & <0.001 \\
+\addlinespace
+\multirow{3}{*}{ELSA}
+& Internet only & 20,080 & 13,923 & 1.50 (1.36--1.65) & <0.001 \\
+& Social only & 20,080 & 13,923 & 1.08 (0.91--1.27) & 0.403 \\
+& Both & 20,080 & 13,923 & 1.47 (1.28--1.70) & <0.001 \\
+\addlinespace
+\multirow{3}{*}{HRS}
+& Internet only & 36,903 & 18,608 & 1.52 (1.38--1.67) & <0.001 \\
+& Social only & 36,903 & 18,608 & 1.10 (1.00--1.20) & 0.040 \\
+& Both & 36,903 & 18,608 & 1.64 (1.50--1.80) & <0.001 \\
+\addlinespace
+\multirow{3}{*}{SHARE}
+& Internet only & 91,935 & 51,742 & 1.50 (1.44--1.57) & <0.001 \\
+& Social only & 91,935 & 51,742 & 1.35 (1.27--1.43) & <0.001 \\
+& Both & 91,935 & 51,742 & 2.06 (1.96--2.16) & <0.001 \\
+\addlinespace
+\multirow{3}{*}{Random effects}
+& Internet only & -- & -- & 1.49 (1.44--1.55) & -- \\
+& Social only & -- & -- & 1.15 (1.01--1.31) & -- \\
+& Both & -- & -- & 1.65 (1.36--2.00) & -- \\
+\bottomrule
+\end{tabular*}
+\renewcommand{\arraystretch}{1.0}
+\setlength{\tabcolsep}{6pt}
+\end{table}
+\FloatBarrier
+
+The cohort-specific estimates for the both-connectedness profile, the central contrast in the joint exposure analysis, are included in Table~\ref{tab:joint} and Fig.~\ref{fig:joint}. The association was positive in all four eligible cohorts, ranging from 1.44 in CHARLS to 2.06 in SHARE.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{fig2_joint_connectedness_bubble_strip.pdf}
+\caption[\textbf{Joint connectedness profiles and next-wave healthy ageing.}]{\textbf{Joint connectedness profiles and next-wave healthy ageing.} The bubble strip displays cohort-specific estimates and random-effects estimates for internet-only, social-only, and both-connectedness groups compared with older adults reporting neither internet use nor social participation. Bubbles show odds ratios printed at the point estimate; bubble size reflects confidence-interval width and grey outlines indicate intervals crossing 1. The joint-profile framing integrates digital ageing evidence with work on social connection and cognition or frailty \cite{li2025tenyear,chen2023digital,samtani2022associations,davies2021longitudinal}.}
+\label{fig:joint}
+\end{figure}
+\FloatBarrier
+
+\subsection{Connectedness histories}
+
+Exposure-history models distinguished newly adopted, discontinued, and persistent connectedness from never-connectedness over the observed two-wave history. Persistent internet use showed the strongest association with next-wave healthy ageing (OR 1.51, 95\% CI 1.32--1.74), followed by newly adopted internet use (OR 1.24, 95\% CI 1.15--1.35). Discontinued internet use was not clearly associated with subsequent healthy ageing (OR 1.09, 95\% CI 0.91--1.30). Social participation histories showed a similar but more heterogeneous ordering: persistent participation (OR 1.32, 95\% CI 1.04--1.69), adopted participation (OR 1.19, 95\% CI 1.03--1.38), and stopped participation (OR 1.18, 95\% CI 1.01--1.37; Fig.~\ref{fig:history}).
+
+This dynamic pattern adds information beyond a single exposure snapshot. Sustained digital engagement may indicate stable access, skills, and routines, whereas adoption may represent a more recent entry into digital resources. Stopping internet use could capture barriers that are not measured directly, including emerging disability, loss of access, or reduced confidence using digital services.
+
+\begin{table}[!htbp]
+\caption{\textbf{Odds ratios for next-wave healthy ageing by connectedness history.}}
+\label{tab:history}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrr@{}}
+\toprule
+Exposure & History & Studies & OR (95\% CI) & I$^2$ (\%) \\
+\midrule
+\multirow{3}{*}{Internet use}
+& Adopted & 4 & 1.24 (1.15--1.35) & 38.1 \\
+& Stopped & 4 & 1.09 (0.91--1.30) & 77.7 \\
+& Persistent & 4 & 1.51 (1.32--1.74) & 91.2 \\
+\addlinespace
+\multirow{3}{*}{Social participation}
+& Adopted & 5 & 1.19 (1.03--1.38) & 90.5 \\
+& Stopped & 5 & 1.18 (1.01--1.37) & 91.5 \\
+& Persistent & 5 & 1.32 (1.04--1.69) & 98.0 \\
+\bottomrule
+\end{tabular*}
+\renewcommand{\arraystretch}{1.0}
+\setlength{\tabcolsep}{6pt}
+\end{table}
+\FloatBarrier
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.93\textwidth]{fig3_connectedness_history_bubble_strip.pdf}
+\caption[\textbf{Connectedness histories and subsequent healthy ageing.}]{\textbf{Connectedness histories and subsequent healthy ageing.} The bubble strip shows adopted, stopped, and persistent internet-use and social-participation histories, with never-connected histories as the reference group. Bubbles show random-effects pooled odds ratios printed at the point estimate; bubble size reflects confidence-interval width and grey outlines indicate intervals crossing 1. The dynamic exposure design extends static digital-inclusion and social-participation analyses by distinguishing adoption, persistence, and discontinuation over time \cite{li2025tenyear,luo2024positive,wang2024associations}.}
+\label{fig:history}
+\end{figure}
+\FloatBarrier
+
+\subsection{Healthy-ageing transitions}
+
+We next separated two clinically different changes in healthy-ageing status. Among participants who were not healthy at baseline, those with both digital and social connectedness had higher odds of gaining healthy ageing at the next wave than those with neither form of connectedness (OR 1.68, 95\% CI 1.37--2.06). Among participants who were already healthy at baseline, the both-connectedness profile was also associated with maintaining healthy ageing (OR 1.65, 95\% CI 1.30--2.10). Internet-only connectedness was associated with both gaining healthy ageing (OR 1.44, 95\% CI 1.33--1.55) and maintaining healthy ageing (OR 1.54, 95\% CI 1.47--1.62), while social-only estimates were smaller (Fig.~\ref{fig:transitions}).
+
+The transition analysis reframes the outcome from a static healthy-ageing state to a change process. A connectedness profile may matter not only for preserving favourable status among already healthy older adults, but also for movement into healthy ageing among those who were initially below the healthy-ageing threshold.
+
+\begin{table}[!htbp]
+\caption{\textbf{Odds ratios for gaining and maintaining healthy ageing by joint connectedness profile.}}
+\label{tab:transitions}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrr@{}}
+\toprule
+Transition & Profile & Studies & OR (95\% CI) & I$^2$ (\%) \\
+\midrule
+\multirow{3}{*}{Gain healthy ageing}
+& Internet only & 4 & 1.44 (1.33--1.55) & 20.5 \\
+& Social only & 4 & 1.13 (0.98--1.32) & 83.4 \\
+& Both & 4 & 1.68 (1.37--2.06) & 86.3 \\
+\addlinespace
+\multirow{3}{*}{Maintain healthy ageing}
+& Internet only & 4 & 1.54 (1.47--1.62) & 0.0 \\
+& Social only & 4 & 1.17 (1.02--1.35) & 86.6 \\
+& Both & 4 & 1.65 (1.30--2.10) & 93.9 \\
+\bottomrule
+\end{tabular*}
+\renewcommand{\arraystretch}{1.0}
+\setlength{\tabcolsep}{6pt}
+\end{table}
+\FloatBarrier
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.93\textwidth]{fig4_transition_uncertainty_bubble_ranking.pdf}
+\caption[\textbf{Joint connectedness and healthy-ageing transitions.}]{\textbf{Joint connectedness and healthy-ageing transitions.} The bubble ranking compares joint connectedness profiles with neither connectedness for two transition outcomes: gaining healthy ageing among participants initially not healthy and maintaining healthy ageing among participants initially healthy. Bubbles show random-effects pooled odds ratios printed at the point estimate; bubble size reflects confidence-interval width and grey outlines indicate intervals crossing 1. This transition framing is aligned with healthy-ageing and intrinsic-capacity studies that treat later-life health as movement across functional states rather than a single disease endpoint \cite{beard2015world,li2026intrinsic,mikkola2023healthy}.}
+\label{fig:transitions}
+\end{figure}
+\FloatBarrier
+
+\subsection{Subgroup patterns and cohort heterogeneity}
+
+Subgroup analyses were directionally consistent across age, sex, education, rurality, and baseline healthy-ageing strata. In pooled subgroup models, internet-use ORs ranged from 1.46 in adults aged 80 years or older to 1.65 among participants with low education. Social-participation ORs ranged from 1.23 among adults younger than 60 years to 1.38 among adults aged 80 years or older. Estimates were positive for women and men, rural and urban participants, and participants with or without healthy ageing at baseline. Full subgroup estimates are provided in the supplementary material to keep the main manuscript within the ten-item display limit.
+
+Between-cohort heterogeneity remained an important feature of the evidence. Leave-one-cohort-out analyses for the both-connectedness profile yielded pooled ORs from 1.53 after omitting SHARE to 1.72 after omitting CHARLS, indicating that the overall association did not depend on a single cohort. The lower heterogeneity after omitting SHARE also suggests that national context and measurement differences are part of the substantive pattern rather than only statistical noise.
+
+\subsection{Domain-specific healthy-ageing patterns}
+
+Domain-specific models were used to identify which components of the healthy-ageing construct contributed most strongly to the overall pattern. Internet use was strongly associated with cognition not low at the next wave (OR 2.50, 95\% CI 2.14--2.92), no ADL limitation (OR 1.53, 95\% CI 1.44--1.64), not depressive symptoms (OR 1.39, 95\% CI 1.34--1.44), good self-rated health (OR 1.45, 95\% CI 1.29--1.61), and no multimorbidity (OR 1.25, 95\% CI 1.14--1.38). Social participation showed positive associations with cognition not low (OR 1.35, 95\% CI 1.16--1.56), no ADL limitation (OR 1.32, 95\% CI 1.15--1.52), and not depressive symptoms (OR 1.19, 95\% CI 1.07--1.32), with weaker evidence for self-rated health and multimorbidity (Fig.~\ref{fig:domains}).
+
+These domain analyses are not formal mediation tests because the domains are components of the outcome itself. They are presented as mechanistic clues. The pattern is consistent with a connectedness framework in which digital access may provide cognitive stimulation, information access, and service navigation, while social participation may support behavioural activation, emotional support, and functional engagement.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.93\textwidth]{fig5_domain_specific_bubble_strip.pdf}
+\caption[\textbf{Domain-specific associations.}]{\textbf{Domain-specific associations.} The bubble strip shows random-effects pooled odds ratios for internet use and social participation with next-wave healthy-ageing components. Bubbles show odds ratios printed at the point estimate; bubble size reflects confidence-interval width and grey outlines indicate intervals crossing 1. Domain-specific findings are interpreted as descriptive clues rather than mediation evidence because the domains are components of the healthy-ageing outcome. The component pattern is discussed alongside prior evidence on cognition, depression, social activity, and functional ageing \cite{livingston2024dementia,floud2021cognitive,stafford2024social,samtani2022associations}.}
+\label{fig:domains}
+\end{figure}
+\FloatBarrier
+
+\subsection{Robustness analyses}
+
+The main findings were stable under inverse-probability weighting for attrition. Weighted estimates were 1.51 (95\% CI 1.43--1.59) for internet use and 1.21 (95\% CI 1.05--1.40) for social participation. Alternative healthy-ageing definitions also preserved the direction of association. Under a lenient 60\% component threshold, the pooled OR was 1.58 (95\% CI 1.44--1.73) for internet use and 1.28 (95\% CI 1.07--1.53) for social participation. Under a stricter all-available-components definition, the corresponding estimates were 1.34 (95\% CI 1.30--1.38) and 1.15 (95\% CI 1.04--1.27). When cognition was removed from the healthy-ageing definition, estimates remained positive for internet use (OR 1.49, 95\% CI 1.41--1.57) and social participation (OR 1.20, 95\% CI 1.04--1.39). Detailed robustness estimates are provided in the supplementary material to preserve the main-text display-item limit.
+
+E-values for the joint both-connectedness profile were 2.68 for the point estimate and 2.05 for the lower confidence limit. These values do not remove the possibility of residual confounding, but they provide a quantitative gauge for how strong an unmeasured confounder would need to be, on the odds-ratio scale, to fully explain the observed association. Taken together, the sensitivity analyses support the internal consistency of the findings while retaining the observational nature of the study.
+
+\section{Discussion}
+
+In this harmonised multi-cohort study, digital and social connectedness were associated with favourable healthy-ageing transitions in later life. Internet use and social participation each showed positive associations with next-wave multidimensional healthy ageing, and older adults with both forms of connectedness had the most favourable profile. The findings were not explained by a single cohort, were visible across major demographic and baseline-health subgroups, and remained stable under attrition weighting and alternative definitions of healthy ageing. The dynamic analyses added a central observation: persistent internet use was more strongly associated with healthy ageing than newly adopted or discontinued use, and joint connectedness was associated with both gaining and maintaining healthy ageing.
+
+The study extends several strands of previous work. Research on digital ageing has linked internet use, digital inclusion, and digital interventions to health and wellbeing in older adults \cite{li2025tenyear,luo2024positive,chen2023digital,riadi2022digital}. Research on social connection has shown associations with depression, frailty, cognition, mortality, and broader later-life outcomes \cite{santini2020social,davies2021longitudinal,samtani2022associations,elovainio2017contribution,stafford2024social}. Our analysis brings these strands together by treating digital and social connectedness as complementary resources and by evaluating their joint profiles in relation to multidimensional healthy ageing. The absence of clear multiplicative or additive interaction is informative: the contribution is not a claim of statistical synergy, but evidence that the group embedded in both digital and social channels consistently showed the most favourable healthy-ageing profile.
+
+The transition results are important for the story of healthy ageing. Healthy ageing is not only a baseline state; it is a movement through states of function, cognition, affect, morbidity, and self-perceived health. Prior cohort studies have used multidimensional ageing constructs such as intrinsic capacity, biological ageing, and healthy-ageing scores to move beyond single outcomes \cite{li2026intrinsic,beard2024cohort,mikkola2023healthy,fried2021physical}. In the present study, connectedness was associated with maintaining healthy ageing among those already healthy and gaining healthy ageing among those initially not healthy. This distinction makes the findings more relevant for prevention and recovery-oriented ageing policy than a single prevalence comparison.
+
+Persistent internet use may capture a more stable resource than current-use status alone. Older adults who remain digitally engaged over time may have more reliable access, better skills, stronger confidence, and more routine use of digital services. Newly adopted use was also positively associated with healthy ageing, suggesting that entry into digital engagement may mark access to new resources. By contrast, discontinued use was not clearly associated with favourable outcomes. This pattern should be interpreted cautiously because stopping internet use may be a marker of health decline or contextual barriers rather than a direct cause of subsequent ageing status. Nonetheless, it supports the idea that digital inclusion should be conceptualised dynamically, not only as a one-time adoption state.
+
+Domain-specific analyses suggested that cognition, functional status, and depressive symptoms were especially relevant to the observed associations. These findings align with evidence linking social relationships and activity with cognitive and mental-health outcomes \cite{livingston2024dementia,floud2021cognitive,samtani2022associations,wang2024associations}. They also fit a plausible behavioural interpretation: digital connectedness may provide cognitive stimulation and access to information, while social participation may support emotional regulation, behavioural activation, and functional engagement. Because the domains are components of the healthy-ageing outcome, however, they should be viewed as descriptive mechanisms or pathway clues rather than formal mediation evidence.
+
+The high heterogeneity, particularly for social participation, requires substantive interpretation. Cross-national ageing cohorts differ in welfare systems, digital infrastructure, social-participation norms, survey wording, baseline health composition, and follow-up schedules. A random-effects approach acknowledges this variability, and leave-one-cohort-out analyses suggest that the main associations were not driven by one dataset alone. In this context, heterogeneity is part of the finding: the health relevance of connectedness may depend on national and cohort context.
+
+This study has several strengths. It used harmonised longitudinal ageing cohorts rather than a single country, modelled exposure before outcome, adjusted for baseline healthy ageing, combined cohort-specific estimates through random-effects meta-analysis, and examined joint profiles, exposure histories, transitions, subgroups, attrition weighting, and alternative definitions. The analysis also respected variable availability, excluding LASI from longitudinal main models and not imputing unavailable internet measures for KLoSA or MHAS.
+
+The limitations are also material. The design is observational, so residual confounding, reverse causation, and selection into internet use or social participation cannot be ruled out. Healthy ageing and connectedness were harmonised from existing surveys, which imposes measurement compromises across cohorts. Attrition and death may bias longitudinal estimates even after inverse-probability weighting. Internet use was a broad indicator and did not distinguish quality, purpose, frequency, device type, or digital literacy. Social participation also varied by cohort and cultural context. Finally, domain analyses were exploratory and should not be treated as evidence that cognition, depressive symptoms, or function formally mediate the associations.
+
+In summary, digital and social connectedness were associated with favourable healthy-ageing transitions across harmonised international ageing cohorts. The strongest profile was observed among older adults with both forms of connectedness and among those with persistent internet use. These findings shift the focus from isolated digital behaviours or single health domains toward dynamic connectedness profiles and multidimensional healthy-ageing trajectories.
+
+\section{Methods}
+
+\subsection{Ethics approval and consent to participate}
+
+This study used de-identified harmonised survey data derived from established ageing cohorts. Each original cohort obtained ethical approval and participant consent through its own governance procedures. The present analysis used secondary anonymised data and did not involve direct contact with participants. The analysis was conducted according to the principles of transparent observational research reporting \cite{elm2007strengthenin}.
+
+\subsection{Study design and participants}
+
+We conducted a harmonised longitudinal cohort analysis using data from the China Health and Retirement Longitudinal Study (CHARLS), English Longitudinal Study of Ageing (ELSA), Health and Retirement Study (HRS), Korean Longitudinal Study of Ageing (KLoSA), Mexican Health and Aging Study (MHAS), Survey of Health, Ageing and Retirement in Europe (SHARE), and Longitudinal Aging Study in India (LASI). These studies belong to the broader HRS-family of ageing cohorts and have been widely used for cross-national ageing research; LASI is an important ageing resource but had only one available wave in the harmonised file used here \cite{bloom2021longitudinal}.
+
+The analytic design used lagged person-wave observations. For each eligible participant-wave, connectedness and covariates were measured at wave $t$, and healthy ageing was measured at wave $t+1$. Observations without a subsequent wave were not eligible for longitudinal models. Cohort inclusion differed by exposure availability: internet-use analyses used cohorts with comparable internet-use measures, while social-participation analyses used cohorts with comparable social-participation measures.
+
+\subsection{Connectedness measures}
+
+Digital connectedness was operationalised as reported internet use. Social connectedness was operationalised as reported social participation. For the joint exposure analysis, observations were classified into four mutually exclusive profiles: neither internet use nor social participation, internet use only, social participation only, and both internet use and social participation. For exposure-history analyses, two-wave histories were classified as never exposed, adopted, stopped, or persistent. For example, persistent internet use indicated reported internet use in both the prior and current exposure windows, whereas adopted internet use indicated movement from no reported use to reported use.
+
+\subsection{Healthy-ageing outcome}
+
+Healthy ageing was defined as a multidimensional binary outcome using available harmonised components: self-rated health, activities-of-daily-living or functional limitation, multimorbidity, depressive symptoms, and cognition. The main definition classified participants as healthy ageing when the harmonised component pattern met the prespecified healthy-ageing threshold. We also constructed alternative definitions: a lenient 60\% component threshold, a strict all-available-components definition, and a definition excluding cognition. Domain-specific outcomes were analysed separately to describe which components contributed most strongly to the overall pattern.
+
+\subsection{Covariates}
+
+Models adjusted for baseline healthy ageing, age, age squared, sex, education, marital status, rurality where available, survey wave, and interval to the next wave. Baseline outcome adjustment was included to reduce confounding by prior health status and to make the estimand closer to change in healthy ageing between waves. Covariate harmonisation followed the available variables in the prepared cohort files.
+
+\subsection{Statistical analysis}
+
+The primary analysis used cohort-specific lagged logistic regression models:
+\[
+\log\left(\frac{P(Y_{i,t+1}=1)}{1-P(Y_{i,t+1}=1)}\right)=\alpha+\beta X_{i,t}+\gamma Y_{i,t}+\delta^\top Z_{i,t},
+\]
+where $Y_{i,t+1}$ denotes healthy ageing at the next wave, $X_{i,t}$ denotes connectedness at the exposure wave, $Y_{i,t}$ denotes baseline healthy ageing, and $Z_{i,t}$ denotes covariates. Standard errors were clustered by participant where applicable. Cohort-specific log-ORs and their standard errors were combined on the log scale using inverse-variance random-effects meta-analysis. Between-cohort variance was estimated using a DerSimonian-Laird style moment estimator, and pooled estimates were exponentiated to odds ratios. Heterogeneity was described using Cochran's $Q$, between-study variance $\tau^2$, and I$^2$.
+
+Secondary analyses examined joint connectedness profiles, exposure histories, and healthy-ageing transitions. Transition models were stratified by baseline healthy-ageing status to estimate gaining healthy ageing among those initially not healthy and maintaining healthy ageing among those initially healthy. Multiplicative interaction was assessed using a product term for internet use and social participation in cohorts with both exposures. Additive interaction was summarised using the relative excess risk due to interaction.
+
+We assessed heterogeneity through subgroup models by age group, sex, education, rurality, and baseline healthy-ageing status, and through leave-one-cohort-out analyses. Robustness analyses included inverse-probability weighting for attrition, alternative healthy-ageing definitions, and E-values for selected estimates. E-values were used as a sensitivity metric for unmeasured confounding, not as causal proof.
+
+\subsection{Reporting summary}
+
+Further information on research design is available in the Nature Portfolio Reporting Summary if prepared for submission. All results are reported as associations. No causal effect is claimed.
+
+\section{Data availability}
+
+The analysis used harmonised secondary ageing-cohort data prepared for this project from CHARLS, ELSA, HRS, KLoSA, MHAS, SHARE, and LASI resources. Access to the underlying individual-level cohort data is governed by each study's data-use agreement and registration process and these data cannot be redistributed by the authors. Aggregate analytic outputs, figure source data, variable-availability tables, and reproducibility notes supporting the manuscript tables and figures are provided with the submission in a public reproducibility package and will be deposited in a public repository with a persistent identifier before publication.
+
+\section{Code availability}
+
+The analysis and figure-generation scripts are provided with the submission in the public reproducibility package. The package includes the run order, software requirements, aggregate result files, and documentation of the restricted-data boundary. Full person-level reruns require independent access to the original cohort data under the relevant data-use agreements.
+
+\section{Acknowledgements}
+
+The authors acknowledge Universiti Sains Malaysia for institutional support.
+
+\section{Author contributions}
+
+Q.W. conceived the study, curated the harmonised analysis files, conducted the analyses, generated the figures, interpreted the results, and wrote the manuscript. M.I. supervised the research and reviewed the manuscript. M.H.A.N. provided methodological feedback and reviewed the manuscript. Y.W. contributed to data validation and interpretation. All authors read and approved the final manuscript.
+
+\section{Funding}
+
+This work was supported by the Henan Provincial Federation of Social Sciences, Research on Age-Friendly Community Evaluation Framework Development (Grant No. 202-26-08).
+
+\section{Competing interests}
+
+The authors declare no competing interests.
+
+\bibliography{references}
+
+\end{document}
