@@ -148,6 +148,17 @@ python 01_mediation_analysis.py       # Mediation
 python 02_ml_shap_analysis.py         # ML + SHAP
 ```
 
+### Exploratory Three-Wave Mediation for the Longitudinal NC Manuscript
+```bash
+python scripts/run_nc_mediation_analysis.py
+```
+
+This script rebuilds a conservative person-wave table from local Harmonized/Gateway Stata files and estimates:
+
+`wave t social participation -> wave t+1 mediator -> wave t+2 healthy ageing`
+
+For each candidate mediator, the corresponding health domain is removed from the healthy-ageing outcome to reduce definitional overlap. Aggregate outputs are written to `outputs_nc_mediation/`, including pooled mediation estimates, cohort-specific estimates, variable availability, triad availability, and a Chinese summary report. These outputs support the exploratory mediation section in the Nature Communications manuscript version under `submission_assets/2026-06-17_nature_communications/`.
+
 ### Compile Manuscript
 ```bash
 cd manuscript/

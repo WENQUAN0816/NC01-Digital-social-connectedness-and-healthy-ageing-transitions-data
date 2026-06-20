@@ -1,0 +1,6 @@
+﻿cohort,status,person_waves,people,waves,social_valid,internet_valid,cognition_valid,depression_valid,function_valid
+CHARLS,loaded,102344,25586,4,72469,0,64306,70220,75254
+ELSA,loaded,178218,19802,9,67525,0,85712,85606,89840
+KLoSA,loaded,89392,11174,8,63214,0,0,28852,63215
+MHAS,loaded,134195,26839,5,44053,0,70541,70644,70626
+SHARE,loaded,1270112,158764,8,381955,0,444211,396713,457545
